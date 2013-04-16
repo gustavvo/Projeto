@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Sistema Locadora - Cadastro de Cliente </title>
+
+<script>
+function form_simples(ele){
+        numero = ele.elements.length
+        erro = "";
+        for(i=0; i<numero; i++){
+                if(ele.elements[i].alt == "yes"){
+                        if(ele.elements[i].name == "email" || ele.elements[i].name == "e-mail" || ele.elements[i].name == "mail"){
+                                if(ele.elements[i].value.indexOf('@')==-1 || ele.elements[i].value.indexOf('.')==-1){
+                                erro = erro + "Preencha o campo '"+ ele.elements[i].name.toUpperCase() +"' corretamente. \n"
+                                }
+                        }else{
+                                if(ele.elements[i].value==""){
+                                erro = erro + "Preencha o campo '"+ ele.elements[i].name.toUpperCase() +"'. \n"
+                                }
+                        }
+                }
+                if(ele.elements[i].title == "yes"){
+                        if(ele.elements[i].value==""){
+                        erro = erro + "Preencha o campo '"+ ele.elements[i].name.toUpperCase() +"'. \n"
+                        }
+                }
+        }
+
+        if(erro != ""){
+                alert("Erros:\n"+erro);
+                return false
+        }else{
+                return true
+        }
+}
+</script>
+
+
+</head>
+
+<body>
+
+<h1> Cadastro de Clientes </h1>
+
+<form action="cadastraCliente.do" method="post" onsubmit="return form_simples(this)">
+
+	Nome: <br>
+	<input type="text" name="nome" alt="yes">
+	<br>
+	
+	Telefone: <br>
+	<input type="text" name="telefone" alt="yes">
+	<br>
+	
+	CPF: <br>
+	<input type="text" name="cpf" alt="yes"> 
+	<br>
+	<br>
+	<input type="submit" value="Cadastrar">
+	<br>
+	<input type="button" value="Voltar o menu principal" onclick="location.href='menu.html'">
+
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> Sistema Locadora - Menu Principal </title>
+</head>
+<body>
+
+<h1> Sistema Locadora - Menu Principal </h1>
+
+
+<input type="button" value="Cadastra Cliente" onclick="location.href='cadastraCliente.html'">
+<br>
+
+<input type="button" value="Cadastra Produto" onclick="location.href='cadastraProduto.html'">
+<br>
+
+<form action="listaProdutos.do" method="post">
+<input type="submit" value="Realiza Empréstimo">
+<br>
+</form>
+
+<form action="listaEmprestimo.do" method="get">
+	<input type="submit" value="Realiza Devolução">
+</form>
+
+<form action="listaClientes.do" method="get">
+<input type="submit" value="Listar Clientes">
+<br>
+</form>
+
+<form action="listaProdutos.do" method="get">
+<input type="submit" value="Listar Produtos">
+<br>
+</form>
+
+<form action="listaEmprestimo.do" method="post">
+	<input type="submit" value="Listar Empréstimos">
+</form>
+
+<input type="button" value="erro" onclick="location.href='WEB-INF/erroLogin.html'">
+
+
+</body>
+</html>
