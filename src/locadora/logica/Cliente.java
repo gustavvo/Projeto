@@ -12,6 +12,7 @@
 
 package locadora.logica;
 
+
 public class Cliente {
 	
 	private String nome;
@@ -80,6 +81,9 @@ public class Cliente {
 	 */
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public Cliente() {
 	}
 	
 }

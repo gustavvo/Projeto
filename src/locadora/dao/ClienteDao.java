@@ -78,6 +78,7 @@ public class ClienteDao {
 			c1.setNome(rs.getString("nome"));
 			c1.setCpf(rs.getString("cpf"));
 			c1.setTelefone(rs.getString("telefone"));
+			c1.setId(rs.getString("idCliente"));
 			listaClientes.add(c1);
 		}
 		
@@ -154,14 +155,13 @@ public class ClienteDao {
 	 * Método que remove um cliente do banco de dados
 	 * @param c1 - cliente a ser removido
 	 */
-	public void remove(Cliente c1)  {
-		String sql = "delete from cliente where id=?";
+	public void remove(int idCliente)  {
+		String sql = "delete from clientebd where idCliente=" + idCliente;
 		
 		try {
 			PreparedStatement stmt;
 			stmt = conexao.prepareStatement(sql);
 		
-		stmt.setString(1, c1.getId());
 		stmt.execute();
 		stmt.close();
 		

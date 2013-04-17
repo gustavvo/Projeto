@@ -70,6 +70,7 @@ public class ProdutoDao {
 			p1.setClassificacao(rs.getString("classificacao"));
 			p1.setCpfLocador(rs.getString("cpfLocador"));
 			p1.setPreco(rs.getDouble("preco"));
+			p1.setId(rs.getInt("idProduto"));
 			listaProdutos.add(p1);
 		}
 		
@@ -180,10 +181,9 @@ public class ProdutoDao {
 	 * @param p1 - produto a ser removido do banco
 	 * @throws SQLException
 	 */
-	public void remove(Produto p1) throws SQLException {
-		String sql = "delete from produtobd where id=?";
+	public void remove(int idProduto) throws SQLException {
+		String sql = "delete from produtobd where idProduto=" + idProduto;
 		PreparedStatement stmt = conexao.prepareStatement(sql);
-		stmt.setInt(1, p1.getId());
 		stmt.execute();
 		stmt.close();
 	}
