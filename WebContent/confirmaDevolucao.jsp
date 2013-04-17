@@ -13,14 +13,14 @@
 	<title> Confirmação de Devolução </title>
 	
 	<script language='JavaScript'>
-function SomenteNumero(e){
-    var tecla=(window.event)?event.keyCode:e.which;   
-    if((tecla>47 && tecla<58)) return true;
-    else{
-    	if ((tecla == 8) || (tecla == 13) || (tecla == 9) || (tecla == 46)) return true;
-		else  return false;
-    }
-}
+	function SomenteNumero(e){
+	    var tecla=(window.event)?event.keyCode:e.which;   
+	    if((tecla>47 && tecla<58)) return true;
+	    else{
+	    	if ((tecla == 8) || (tecla == 13) || (tecla == 9) || (tecla == 46)) return true;
+			else  return false;
+	    }
+	}
 </script> 
 
 
